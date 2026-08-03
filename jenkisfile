@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+stages {
+    stage('clone') {
+        steps {
+        git branch: 'main', credentialsId: 'bfa7a15b-7d36-4bdb-9449-1b646cd603a3', url: 'https://github.com/Aparnakarkhele/java-pipeline.git'
+}
+}
     stages {
         stage('compile') {
             steps { 
